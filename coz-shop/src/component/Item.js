@@ -2,7 +2,6 @@ import { dummy } from "./test_item"
 import './item.css'
 
 export default function Item() {
-
     return (
       <div key={dummy.items[0].id} className="item">
         <input type="button" className="item-bookmark"></input>
