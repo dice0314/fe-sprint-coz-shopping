@@ -22,9 +22,22 @@ export default function Main() {
         <section>
             <Header />
             <div className="item-list-container">
-                {data.map((item, idx) => (item.title ?
-                    <Item item={item} key={idx} /> : null
-                ))}
+                <div className="item-list">
+                    <h2>상품 리스트</h2>
+                    <ul>
+                        {data.map((item) => (
+                            <Item item={item} />
+                        ))}
+                    </ul>
+                </div>
+                <div className="bookmark-list">
+                    <h2>북마크 리스트</h2>
+                    <ul>
+                        {data.map((item) => (
+                            <Item item={item} />
+                        ))}
+                    </ul>
+                </div>
             </div>
                 
             <Footer />
