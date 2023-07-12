@@ -1,18 +1,57 @@
-import { dummy } from "./test_item"
 import './item.css'
 
-export default function Item() {
-    return (
-      <div key={dummy.items[0].id} className="item">
-        <input type="button" className="item-bookmark"></input>
-        <img className="item-img" src="image_component/apple_watch.png" alt={dummy.items[0].title}></img>
-        <div className="item-info-container">
-            <span className="item-title">{dummy.items[0].title}</span>
-            <div className="item-info-container2">
-                <span className="item-discountPer">{dummy.items[0].discountPercentage}%</span>
-                <span className="item-price">{dummy.items[0].price}원</span>
-            </div>
-        </div>
-      </div>
-    )
+export default function Item({item}) {
+
+    if(item.type === "Product"){
+      return (
+        <li key={item.id} id={item.id}>
+          <input type="button" className="item-bookmark"></input>
+          <img className="item-img" src={item.image_url} alt={item.title}></img>
+          <div className="item-info-container">
+              <span className="item-title">{item.title}</span>
+              <div className="item-info-container2">
+                  <span className="item-discountPer">{item.discountPercentage}%</span>
+                  <span className="item-info">{item.price}원</span>
+              </div>
+          </div>
+        </li>
+      )
+    } else if(item.type === "Category") {
+      return (
+        <li key={item.id} id={item.id}>
+          <input type="button" className="item-bookmark"></input>
+          <img className="item-img" src={item.image_url} alt={item.title}></img>
+          <div className="item-info-container">
+              <span className="item-title">#{item.title}</span>
+          </div>
+        </li>
+      )
+    } else if(item.type === "Exhibition") {
+      return (
+        <li key={item.id} id={item.id}>
+          <input type="button" className="item-bookmark"></input>
+          <img className="item-img" src={item.image_url} alt={item.title}></img>
+          <div className="item-info-container">
+              <span className="item-title">{item.title}</span>
+              <div className="item-info-container2">
+                  <span className="item-info">{item.subtitle}</span>
+              </div>
+          </div>
+        </li>
+      )
+    } else if(item.type === "Brand") {
+      return (
+        <li key={item.id} id={item.id}>
+          <input type="button" className="item-bookmark"></input>
+          <img className="item-img" src={item.brand_image_url} alt={item.brand_name}></img>
+          <div className="item-info-container">
+              <span className="item-title">{item.brand_name}</span>
+              <div className="item-info-container2">
+                  <p>관심고객수</p>
+                  <span className="item-info">{item.follower}</span>
+              </div>
+          </div>
+        </li>
+      )
+    }
   }

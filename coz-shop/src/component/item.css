@@ -37,6 +37,11 @@
     flex-direction: column;
 }
 
+.item-info-container2 p {
+    font-size: 16px;
+    font-weight: 700;
+}
+
 .item-discountPer {
     display: flex;
     justify-content: right;
@@ -45,6 +50,8 @@
     color: #452CDD;
 }
 
-.item-price {
+.item-info {
+    display: flex;
+    justify-content: right;
     font-size: 16px;
 }
