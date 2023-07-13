@@ -19,9 +19,6 @@
 .item-list ul {
     display: flex;
     flex-direction: row;
+    width: 1128px;
     justify-content: space-between;
-}
-
-.item-list ul li {
-
 }

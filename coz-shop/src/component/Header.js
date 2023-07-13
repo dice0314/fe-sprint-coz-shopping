@@ -18,7 +18,7 @@ export default function Header() {
         }
         setBurger(!burger);
         console.log(burger)
-      }
+    }
 
     return (
         <header className="header-container">
