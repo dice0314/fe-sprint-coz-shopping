@@ -25,16 +25,18 @@ export default function Main() {
                 <div className="item-list">
                     <h2>상품 리스트</h2>
                     <ul>
-                        {data.map((item) => (
-                            <Item item={item} />
+                        {data.map((item, idx) => (
+                            idx < 4 ? 
+                            <Item item={item} /> : null
                         ))}
                     </ul>
                 </div>
-                <div className="bookmark-list">
+                <div className="item-list">
                     <h2>북마크 리스트</h2>
                     <ul>
-                        {data.map((item) => (
-                            <Item item={item} />
+                        {data.map((item, idx) => (
+                            idx < 4 ? 
+                            <Item item={item} /> : null
                         ))}
                     </ul>
                 </div>

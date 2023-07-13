@@ -11,7 +11,7 @@ export default function Item({item}) {
               <span className="item-title">{item.title}</span>
               <div className="item-info-container2">
                   <span className="item-discountPer">{item.discountPercentage}%</span>
-                  <span className="item-info">{item.price}원</span>
+                  <span className="item-info">{Number(item.price).toLocaleString()}원</span>
               </div>
           </div>
         </li>
@@ -48,7 +48,7 @@ export default function Item({item}) {
               <span className="item-title">{item.brand_name}</span>
               <div className="item-info-container2">
                   <p>관심고객수</p>
-                  <span className="item-info">{item.follower}</span>
+                  <span className="item-info">{item.follower.toLocaleString()}</span>
               </div>
           </div>
         </li>
