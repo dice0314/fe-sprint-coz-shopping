@@ -9,7 +9,7 @@ export default function Products({ data }) {
         <section>
             <Header />
             <div className="product-container">
-                <ItemFilter />
+                <ItemFilter data={data}/>
                 <ul className="item-list">
                     {data.map((item) => (
                         <Item item={item} />
