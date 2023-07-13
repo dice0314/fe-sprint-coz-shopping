@@ -30,6 +30,7 @@
 .item-title {
     font-size: 16px;
     font-weight: 800;
+    width: 155px;
 }
 
 .item-info-container2 {
@@ -54,4 +55,9 @@
     display: flex;
     justify-content: right;
     font-size: 16px;
+}
+
+.item-ex-info {
+    display: flex;
+    justify-content: left;
 }

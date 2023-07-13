@@ -31,11 +31,9 @@ export default function Item({item}) {
         <li key={item.id} id={item.id}>
           <input type="button" className="item-bookmark"></input>
           <img className="item-img" src={item.image_url} alt={item.title}></img>
-          <div className="item-info-container">
+          <div className="item-ex-info-container">
               <span className="item-title">{item.title}</span>
-              <div className="item-info-container2">
-                  <span className="item-info">{item.subtitle}</span>
-              </div>
+              <span className="item-ex-info">{item.sub_title}</span>
           </div>
         </li>
       )
