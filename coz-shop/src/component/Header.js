@@ -3,11 +3,12 @@ import { Link } from 'react-router-dom';
 import './header.css'
 
 export default function Header() {
-    const burgerList = document.querySelector('.hamburger-list')
-    const burgerListhead = document.querySelector('.hamburger-list-head')
     const [burger, setBurger] = useState(false);
 
     const handleHamburgerClick = () => {
+        const burgerList = document.querySelector('.hamburger-list');
+        const burgerListhead = document.querySelector('.hamburger-list-head');
+
         if(burger){
             burgerList.classList.add('hamburger-none');
             burgerListhead.classList.add('hamburger-none');
