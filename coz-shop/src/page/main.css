@@ -1,0 +1,14 @@
+.item-list-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.item-list ul {
+    display: flex;
+    flex-direction: row;
+}
+
+.bookmark-list ul {
+    display: flex;
+    flex-direction: row;
+}

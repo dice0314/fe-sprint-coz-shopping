@@ -1,0 +1,57 @@
+.item {
+    height: 264px;
+    width: 264px;
+}
+
+.item-img {
+    height: 210px;
+    width: 264px;
+    border-radius: 12px;
+}
+
+.item-bookmark {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 27px;
+    width: 27px;
+    margin-left: 228px;
+    margin-top: 173px;
+    border-style: none;
+    background: url("../../public/image_component/star_off.png") no-repeat;
+}
+
+.item-info-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.item-title {
+    font-size: 16px;
+    font-weight: 800;
+}
+
+.item-info-container2 {
+    display: flex;
+    flex-direction: column;
+}
+
+.item-info-container2 p {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.item-discountPer {
+    display: flex;
+    justify-content: right;
+    font-size: 16px;
+    font-weight: 800;
+    color: #452CDD;
+}
+
+.item-info {
+    display: flex;
+    justify-content: right;
+    font-size: 16px;
+}
