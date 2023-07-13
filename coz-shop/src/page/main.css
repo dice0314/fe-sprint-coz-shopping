@@ -1,14 +1,27 @@
 .item-list-container{
     display: flex;
     flex-direction: column;
+    align-items: center;
+    margin-top: 12px;
+}
+
+.item-list {
+    margin-top: 12px;
+    width: 1128px;
+}
+
+.item-list h2 {
+    margin-bottom: 12px;
+    font-size: 24px;
+    font-weight: 600;
 }
 
 .item-list ul {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
 }
 
-.bookmark-list ul {
-    display: flex;
-    flex-direction: row;
+.item-list ul li {
+
 }
