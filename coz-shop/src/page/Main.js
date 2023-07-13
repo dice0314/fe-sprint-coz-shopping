@@ -1,22 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Footer from "../component/Footer"
 import Header from "../component/Header"
 import Item from "../component/Item"
 import './main.css'
-import { getItem } from "../api/ItemDataApi"
 
-export default function Main() {
-    const [data, setData] = useState([]);
-
-    useEffect(() => {
-        getItem()
-          .then((res) => {
-            setData(res.data);
-          })
-          .catch((error) => {
-            console.error(error);
-            });
-    }, []);
+export default function Main({data}) {
 
     return (
         <section>
