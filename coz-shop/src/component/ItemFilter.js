@@ -1,33 +1,7 @@
 import { useState } from 'react';
 import './itemFilter.css'
 
-export default function ItemFilter({ data }) {
-    const [filterType, setfilterType] = useState("All");
-
-    const handleFilterClick = (event) => {
-        const filterName = event.currentTarget.querySelector('.filter-name');
-        const selectedFilter = filterName.textContent;
-
-        if(selectedFilter === "전체"){
-            setfilterType("All");
-        } else if(selectedFilter === "상품"){
-            setfilterType("Product");
-        } else if(selectedFilter === "카테고리"){
-            setfilterType("Category");
-        } else if(selectedFilter === "기획전"){
-            setfilterType("Exhibition");
-        } else if(selectedFilter === "브랜드"){
-            setfilterType("Brand");
-        }
-        
-        const filterNames = document.querySelectorAll('.filter-name');
-
-        filterNames.forEach((name) => {
-            name.classList.remove('itemFilter-select');
-        });
-        filterName.classList.add('itemFilter-select');
-        console.log(filterType)
-    };
+export default function ItemFilter({ data, handleFilterClick }) {
 
     return (
         <div className="itemFilter-container">
