@@ -27,6 +27,7 @@ export default function Main({ data, bookmarkList, handleBookmarkClick }) {
                 <div className="item-list">
                     <h2>북마크 리스트</h2>
                     <ul>
+                        {bookmarkList.length === 0 ? <li className='bookmark-none'>북마크된 상품이 없습니다.</li> : null}
                         {data.map((item) => {
                             const bookmarkIndex = bookmarkList.findIndex((bookmark) => bookmark.id === item.id);
                             if (bookmarkIndex !== -1 && bookmarkIndex < 4) {

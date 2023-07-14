@@ -1,6 +1,5 @@
-.item {
-    height: 264px;
-    width: 264px;
+li:not(:nth-child(4n)) {
+    margin-right: 24px;
 }
 
 .item-img {

@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import './item.css'
 
 export default function Item({ item , handleBookmarkClick, bookmarkList}) {
