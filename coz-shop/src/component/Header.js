@@ -17,7 +17,6 @@ export default function Header() {
             burgerListhead.classList.remove('hamburger-none');
         }
         setBurger(!burger);
-        console.log(burger)
     }
 
     return (

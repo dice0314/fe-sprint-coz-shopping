@@ -22,6 +22,10 @@
     background: url("../../public/image_component/star_off.png") no-repeat;
 }
 
+.bookmark-on {
+    background: url("../../public/image_component/star_on.png") no-repeat;
+}
+
 .item-info-container {
     display: flex;
     justify-content: space-between;
