@@ -53,7 +53,6 @@ export default function Products({ data, handleBookmarkClick, bookmarkList }) {
                             handleBookmarkClick={handleBookmarkClick}
                             bookmarkList={bookmarkList}/>
                     ))}
-                    {filterItem.length === 0 && <li>아무것도 없음</li>}
                 </ul>
             </div>
             <Footer />

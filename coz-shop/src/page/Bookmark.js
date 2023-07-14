@@ -57,7 +57,7 @@ export default function Bookmark({ data , handleBookmarkClick, bookmarkList}) {
                             handleBookmarkClick={handleBookmarkClick}
                             bookmarkList={bookmarkList} />
                         ))
-                    ) : (<li>아무것도 없음</li>)}
+                    ) : (<li className="bookmark-none">북마크된 상품이 없습니다.</li>)}
                 </ul>
             </div>
             <Footer />
