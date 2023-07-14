@@ -18,40 +18,48 @@ function App() {
           });
   }, []);
 
-  const [filterType, setfilterType] = useState("All");
+  const [bookmarkList, setBookmarkList] = useState([]);
 
-    const handleFilterClick = (event) => {
-        const filterName = event.currentTarget.querySelector('.filter-name');
-        const selectedFilter = filterName.textContent;
+  const handleBookmarkClick = (event) => {
+    const itemId = Number(event.target.parentNode.id);
+    const isBookmark = bookmarkList.findIndex((bookmark) => bookmark.id === itemId);
+    const bookmarkStar = event.target;
 
-        if(selectedFilter === "전체"){
-            setfilterType("All");
-        } else if(selectedFilter === "상품"){
-            setfilterType("Product");
-        } else if(selectedFilter === "카테고리"){
-            setfilterType("Category");
-        } else if(selectedFilter === "기획전"){
-            setfilterType("Exhibition");
-        } else if(selectedFilter === "브랜드"){
-            setfilterType("Brand");
-        }
-        
-        const filterNames = document.querySelectorAll('.filter-name');
+    if (isBookmark !== -1) {
+      const updatedList = [...bookmarkList];
+      updatedList.splice(isBookmark, 1);
+      bookmarkStar.classList.remove('bookmark-on');
+      setBookmarkList(updatedList);
 
-        filterNames.forEach((name) => {
-            name.classList.remove('itemFilter-select');
-        });
-        filterName.classList.add('itemFilter-select');
-        console.log(filterType)
-    };
+    } else {
+      const addBookmark = {
+        id: itemId,
+      };
+      setBookmarkList([...bookmarkList, addBookmark]);
+      bookmarkStar.classList.add('bookmark-on');
+    }
+  };
+
 
   return (
     <Router>
       <div className="App">
         <Routes>
-          <Route path="/" element={<Main data={data}/>} />
-          <Route path="/products/list" element={<Products data={data} filterType={filterType} handleFilterClick={handleFilterClick}/>} />
-          <Route path="/bookmark" element={<Bookmark data={data}/>} />
+          <Route path="/" element={
+            <Main
+              data={data}
+              bookmarkList={bookmarkList}
+              handleBookmarkClick={handleBookmarkClick}/>} />
+          <Route path="/products/list" element={
+            <Products
+              data={data}
+              handleBookmarkClick={handleBookmarkClick}
+              bookmarkList={bookmarkList}/>} />
+          <Route path="/bookmark" element={
+            <Bookmark
+              data={data}
+              handleBookmarkClick={handleBookmarkClick}
+              bookmarkList={bookmarkList}/>} />
         </Routes>
       </div>
     </Router>

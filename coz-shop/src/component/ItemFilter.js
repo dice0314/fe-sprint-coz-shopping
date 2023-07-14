@@ -1,7 +1,6 @@
-import { useState } from 'react';
 import './itemFilter.css'
 
-export default function ItemFilter({ data, handleFilterClick }) {
+export default function ItemFilter({ handleFilterClick }) {
 
     return (
         <div className="itemFilter-container">

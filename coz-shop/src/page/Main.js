@@ -4,7 +4,7 @@ import Header from "../component/Header"
 import Item from "../component/Item"
 import './main.css'
 
-export default function Main({data}) {
+export default function Main({ data, bookmarkList, handleBookmarkClick }) {
 
     return (
         <section>
@@ -15,17 +15,33 @@ export default function Main({data}) {
                     <ul>
                         {data.map((item, idx) => (
                             idx < 4 ? 
-                            <Item item={item} /> : null
+                            <Item
+                                key={item.id}
+                                id={item.id}
+                                item={item}
+                                bookmarkList={bookmarkList}
+                                handleBookmarkClick={handleBookmarkClick}/> : null
                         ))}
                     </ul>
                 </div>
                 <div className="item-list">
                     <h2>북마크 리스트</h2>
                     <ul>
-                        {data.map((item, idx) => (
-                            idx < 4 ? 
-                            <Item item={item} /> : null
-                        ))}
+                        {bookmarkList.length === 0 ? <li className='bookmark-none'>북마크된 상품이 없습니다.</li> : null}
+                        {data.map((item) => {
+                            const bookmarkIndex = bookmarkList.findIndex((bookmark) => bookmark.id === item.id);
+                            if (bookmarkIndex !== -1 && bookmarkIndex < 4) {
+                                return (
+                                    <Item
+                                        key={item.id}
+                                        id={item.id}
+                                        item={item}
+                                        bookmarkList={bookmarkList}
+                                        handleBookmarkClick={handleBookmarkClick}/>
+                                );
+                            }
+                            return null;
+                        })}
                     </ul>
                 </div>
             </div>

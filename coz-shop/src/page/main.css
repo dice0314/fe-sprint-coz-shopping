@@ -19,6 +19,17 @@
 .item-list ul {
     display: flex;
     flex-direction: row;
+    align-items: center;
     width: 1128px;
-    justify-content: space-between;
+    height: 264px;
+}
+
+.bookmark-none {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 264px;
+    width: 1128px;
+    font-size: 26px;
+    
 }
