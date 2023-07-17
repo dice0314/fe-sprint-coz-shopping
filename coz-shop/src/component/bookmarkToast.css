@@ -1,7 +1,9 @@
 .toast-container {
     display: flex;
     align-items: center;
-    position: absolute;
+    position: fixed;
+    bottom: 40px;
+    right: 20px;
     padding: 18px 24px;
     border-style: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 12px;

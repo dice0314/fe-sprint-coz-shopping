@@ -5,6 +5,7 @@ import Bookmark from './page/Bookmark';
 import { useEffect, useState } from 'react';
 import { getItem } from './api/ItemDataApi';
 import ItemModal from './component/ItemModal';
+import BookmarkToast from './component/BookmarkToast';
 
 function App() {
   const [data, setData] = useState([]);
@@ -20,28 +21,31 @@ function App() {
   }, []);
 
   const [bookmarkList, setBookmarkList] = useState([]);
+  const [showToast, setShowToast] = useState(false);
+  const [actionType, setActionType] = useState('');
 
   const handleBookmarkClick = (event) => {
     const itemId = Number(event.target.id);
     const isBookmark = bookmarkList.findIndex((bookmark) => bookmark.id === itemId);
     const bookmarkStar = event.target;
-    
-    console.log(event.target)
-    console.log(bookmarkList)
-    console.log(itemId)
 
     if (isBookmark !== -1) {
       const updatedList = [...bookmarkList];
       updatedList.splice(isBookmark, 1);
       bookmarkStar.classList.remove('bookmark-on');
       setBookmarkList(updatedList);
+      setActionType('remove');
+      setShowToast(true);
     } else {
       const addBookmark = {
         id: itemId,
       };
       setBookmarkList([...bookmarkList, addBookmark]);
       bookmarkStar.classList.add('bookmark-on');
+      setActionType('add');
+      setShowToast(true);
     }
+    console.log(actionType)
   };
 
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -54,8 +58,7 @@ function App() {
       setClickItem(result)
     }
   }
-
-
+  
   return (
     <Router>
       <div className="App">
@@ -65,6 +68,11 @@ function App() {
             clickItem={clickItem}
             handleBookmarkClick={handleBookmarkClick}
             bookmarkList={bookmarkList} /> : null}
+          <BookmarkToast
+            showToast={showToast}
+            setShowToast={setShowToast}
+            bookmarkList={bookmarkList}
+            actionType={actionType} />
         <Routes>
           <Route path="/" element={
             <Main
