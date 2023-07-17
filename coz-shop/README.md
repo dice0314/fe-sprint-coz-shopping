@@ -1,70 +1,24 @@
-# Getting Started with Create React App
+# fe-sprint-coz-shopping
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 프로젝트의 이름
+- COZ-Shopping
 
-## Available Scripts
+## 프로젝트 설명
 
-In the project directory, you can run:
+1. 애플리케이션이 수행하는 작업
+- 헤더의 왼쪽 아이콘을 누를 경우 ("/") 경로로 이동되며, 홈으로 돌아오게 된다.
+- 헤더의 오른쪽 햄버거를 누를 경우 페이지를 이동할 수 있는 nav가 생성되며, 상품리스트 페이지("/products/list"), 북마크 페이지("/bookmark")로 이동할 수 있는 각각의 메뉴가 나온다.
+- 아이템들의 이미지를 클릭할 경우 아이템이 확대된 모달을 볼 수 있다.
+- 모달은 X버튼이나 회색 배경을 클릭할 경우 빠져나올 수 있다.
+- 아이템 이미지 위에 별 모양은 북마크를 표시하며, 클릭할 경우 북마크가 되며 회색은 북마크가 비활성화된 상태, 노란색은 북마크가 활성화된 상태를 나타낸다.
+- 북마크를 클릭할 경우 활성화, 비활성화에 따라 알맞은 토스트 메시지가 오른쪽 하단에 생성된다.
+- 북마크된 상품들은 메인 페이지의 하단 리스트와 북마크 페이지에서 확인할 수 있다.
+- 상품리트트 페이지와 북마크 페이지에는 각각의 아이템 필터 기능이 있으며 자신이 원하는 필터를 클릭하여 원하는 아이템만 볼 수 있다.
 
-### `npm start`
+2. 사용했던 기술을 사용한 이유
+- 보여줄 페이지가 그리 많지 않아서 react-app을 사용하였다.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+3. 귀하가 직면한 몇 가지 문제와 향후 구현하고자 하는 기능
+- 북마크 클릭 시 토스트 메시지가 생성되는데 연속으로 누를 경우 사라지는 시간이 초기화 되지 않고 처음 누른 시간에서 2초가 지났을 때 사라지는 버그가 있다.
+- 향후 위의 버그를 고치고 추가적으로 토스트 메시지가 연속으로 생성될 경우 밀려가며 여러개의 메시지가 화면에 나오도록 구현하고자 한다.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
