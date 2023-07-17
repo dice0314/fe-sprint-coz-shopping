@@ -3,9 +3,8 @@ import Footer from "../component/Footer"
 import Header from "../component/Header"
 import Item from "../component/Item"
 import './main.css'
-import BookmarkToast from '../component/BookmarkToast';
 
-export default function Main({ data, bookmarkList, handleBookmarkClick }) {
+export default function Main({ data, bookmarkList, handleBookmarkClick, handleModalOpen, setClickItem }) {
 
     return (
         <section>
@@ -21,7 +20,9 @@ export default function Main({ data, bookmarkList, handleBookmarkClick }) {
                                 id={item.id}
                                 item={item}
                                 bookmarkList={bookmarkList}
-                                handleBookmarkClick={handleBookmarkClick}/> : null
+                                handleBookmarkClick={handleBookmarkClick}
+                                handleModalOpen={handleModalOpen}
+                                setClickItem={setClickItem} /> : null
                         ))}
                     </ul>
                 </div>
@@ -46,7 +47,6 @@ export default function Main({ data, bookmarkList, handleBookmarkClick }) {
                     </ul>
                 </div>
             </div>
-                
             <Footer />
         </section>
     )

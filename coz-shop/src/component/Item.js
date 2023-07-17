@@ -1,6 +1,6 @@
 import './item.css'
 
-export default function Item({ item , handleBookmarkClick, bookmarkList}) {
+export default function Item({ item , handleBookmarkClick, bookmarkList, handleModalOpen}) {
 
     if(item.type === "Product"){
       return (
@@ -8,7 +8,7 @@ export default function Item({ item , handleBookmarkClick, bookmarkList}) {
           {bookmarkList.findIndex((bookmark) => bookmark.id === item.id) === -1 ?
           (<input type="button" id={item.id} className="item-bookmark" onClick={handleBookmarkClick}/>) :
           (<input type="button" id={item.id} className="item-bookmark bookmark-on" onClick={handleBookmarkClick}/>)}
-          <img className="item-img" src={item.image_url} alt={item.title}/>
+          <img className="item-img" id={item.id} onClick={handleModalOpen} src={item.image_url} alt={item.title} />
           <div className="item-info-container">
               <span className="item-title">{item.title}</span>
               <div className="item-info-container2">
@@ -24,7 +24,7 @@ export default function Item({ item , handleBookmarkClick, bookmarkList}) {
           {bookmarkList.findIndex((bookmark) => bookmark.id === item.id) === -1 ?
           (<input type="button" id={item.id} className="item-bookmark" onClick={handleBookmarkClick}/>) :
           (<input type="button" id={item.id} className="item-bookmark bookmark-on" onClick={handleBookmarkClick}/>)}
-          <img className="item-img" src={item.image_url} alt={item.title} />
+          <img className="item-img" id={item.id} onClick={handleModalOpen} src={item.image_url} alt={item.title} />
           <div className="item-info-container">
               <span className="item-title">#{item.title}</span>
           </div>
@@ -36,7 +36,7 @@ export default function Item({ item , handleBookmarkClick, bookmarkList}) {
           {bookmarkList.findIndex((bookmark) => bookmark.id === item.id) === -1 ?
           (<input type="button" id={item.id} className="item-bookmark" onClick={handleBookmarkClick}/>) :
           (<input type="button" id={item.id} className="item-bookmark bookmark-on" onClick={handleBookmarkClick}/>)}
-          <img className="item-img" src={item.image_url} alt={item.title} />
+          <img className="item-img" id={item.id} onClick={handleModalOpen} src={item.image_url} alt={item.title} />
           <div className="item-ex-info-container">
               <span className="item-title">{item.title}</span>
               <span className="item-ex-info">{item.sub_title}</span>
@@ -49,7 +49,7 @@ export default function Item({ item , handleBookmarkClick, bookmarkList}) {
           {bookmarkList.findIndex((bookmark) => bookmark.id === item.id) === -1 ?
           (<input type="button" id={item.id} className="item-bookmark" onClick={handleBookmarkClick}/>) :
           (<input type="button" id={item.id} className="item-bookmark bookmark-on" onClick={handleBookmarkClick}/>)}
-          <img className="item-img" src={item.brand_image_url} alt={item.brand_name} />
+          <img className="item-img" id={item.id} onClick={handleModalOpen} src={item.brand_image_url} alt={item.brand_name} />
           <div className="item-info-container">
               <span className="item-title">{item.brand_name}</span>
               <div className="item-info-container2">

@@ -4,6 +4,7 @@ import Products from './page/Products';
 import Bookmark from './page/Bookmark';
 import { useEffect, useState } from 'react';
 import { getItem } from './api/ItemDataApi';
+import ItemModal from './component/ItemModal';
 
 function App() {
   const [data, setData] = useState([]);
@@ -40,16 +41,32 @@ function App() {
     }
   };
 
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [clickItem, setClickItem] = useState();
+
+  const handleModalOpen = (event) => {
+    setIsModalOpen(!isModalOpen);
+    if(event.target.id){
+      const result = data.find((item) => item.id === Number(event.target.id))
+      setClickItem(result)
+    }
+    console.log(clickItem)
+
+  }
+
 
   return (
     <Router>
       <div className="App">
+        {isModalOpen ? <ItemModal handleModalOpen={handleModalOpen} clickItem={clickItem} /> : null}
         <Routes>
           <Route path="/" element={
             <Main
               data={data}
               bookmarkList={bookmarkList}
-              handleBookmarkClick={handleBookmarkClick}/>} />
+              handleBookmarkClick={handleBookmarkClick}
+              handleModalOpen={handleModalOpen}
+              setClickItem={setClickItem}/>} />
           <Route path="/products/list" element={
             <Products
               data={data}
