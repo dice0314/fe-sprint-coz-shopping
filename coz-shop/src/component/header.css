@@ -39,9 +39,14 @@
     margin-right: 76px;
 }
 
+.hamburger-list-container{
+    position: absolute;
+    margin-right: 235px;
+}
+
 .hamburger-list-head {
     position: absolute;
-    margin-right: 82px;
+    margin-left: 132px;
     margin-top: 30px;
     width: 20px;
     height: 20px;
