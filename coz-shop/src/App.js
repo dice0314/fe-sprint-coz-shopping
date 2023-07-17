@@ -5,6 +5,7 @@ import Bookmark from './page/Bookmark';
 import { useEffect, useState } from 'react';
 import { getItem } from './api/ItemDataApi';
 import ItemModal from './component/ItemModal';
+import BookmarkToast from './component/BookmarkToast';
 
 function App() {
   const [data, setData] = useState([]);
@@ -31,12 +32,14 @@ function App() {
       updatedList.splice(isBookmark, 1);
       bookmarkStar.classList.remove('bookmark-on');
       setBookmarkList(updatedList);
+      setShowToast(true);
     } else {
       const addBookmark = {
         id: itemId,
       };
       setBookmarkList([...bookmarkList, addBookmark]);
       bookmarkStar.classList.add('bookmark-on');
+      setShowToast(true);
     }
   };
 
@@ -51,6 +54,7 @@ function App() {
     }
   }
 
+  const [showToast, setShowToast] = useState(false);
 
   return (
     <Router>
@@ -61,6 +65,10 @@ function App() {
             clickItem={clickItem}
             handleBookmarkClick={handleBookmarkClick}
             bookmarkList={bookmarkList} /> : null}
+          <BookmarkToast
+            showToast={showToast}
+            setShowToast={setShowToast}
+            bookmarkList={bookmarkList} />
         <Routes>
           <Route path="/" element={
             <Main
