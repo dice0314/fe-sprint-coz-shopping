@@ -48,6 +48,7 @@
 }
 
 .modal-container span {
+    margin-left: 5px;
     font-size: 24px;
     color: #fff;
     text-shadow: 0 0 4px rgb(0, 0, 0, 0.2);
