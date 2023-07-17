@@ -5,7 +5,7 @@ import Item from "../component/Item";
 import ItemFilter from "../component/ItemFilter";
 import './products.css'
 
-export default function Products({ data, handleBookmarkClick, bookmarkList }) {
+export default function Products({ data, handleBookmarkClick, bookmarkList, handleModalOpen, setClickItem }) {
     const [filterType, setfilterType] = useState("All");
 
     const handleFilterClick = (event) => {
@@ -51,7 +51,9 @@ export default function Products({ data, handleBookmarkClick, bookmarkList }) {
                             id={item.id}
                             item={item}
                             handleBookmarkClick={handleBookmarkClick}
-                            bookmarkList={bookmarkList}/>
+                            bookmarkList={bookmarkList}
+                            handleModalOpen={handleModalOpen}
+                            setClickItem={setClickItem} />
                     ))}
                 </ul>
             </div>

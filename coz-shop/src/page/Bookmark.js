@@ -4,7 +4,7 @@ import Header from "../component/Header";
 import ItemFilter from "../component/ItemFilter";
 import Item from "../component/Item";
 
-export default function Bookmark({ data , handleBookmarkClick, bookmarkList}) {
+export default function Bookmark({ data , handleBookmarkClick, bookmarkList, handleModalOpen, setClickItem }) {
 
     const [filterType, setfilterType] = useState("All");
 
@@ -55,7 +55,9 @@ export default function Bookmark({ data , handleBookmarkClick, bookmarkList}) {
                             id={item.id}
                             item={item}
                             handleBookmarkClick={handleBookmarkClick}
-                            bookmarkList={bookmarkList} />
+                            bookmarkList={bookmarkList}
+                            handleModalOpen={handleModalOpen}
+                            setClickItem={setClickItem} />
                         ))
                     ) : (<li className="bookmark-none">북마크된 상품이 없습니다.</li>)}
                 </ul>

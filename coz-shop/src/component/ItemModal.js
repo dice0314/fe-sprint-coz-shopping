@@ -1,6 +1,6 @@
 import './itemModal.css'
 
-export default function ItemModal({ handleModalOpen, clickItem }) {
+export default function ItemModal({ handleModalOpen, clickItem, handleBookmarkClick, bookmarkList }) {
 
     return(
         <div className="modal-container" onClick={handleModalOpen}>
@@ -11,7 +11,9 @@ export default function ItemModal({ handleModalOpen, clickItem }) {
                 <img className="modal-close-img" src="/image_component/close.png" />
             </div>
             <div className="modal-info-container" onClick={(event) => event.stopPropagation()}>
-                <img className="modal-bookmark-off" src="/image_component/star_off.png" />
+                { bookmarkList.findIndex((bookmark) => bookmark.id === clickItem.id) === -1 ?
+                <input type="button" id={clickItem.id} className="modal-bookmark-off" onClick={handleBookmarkClick}/> :
+                <input type="button" id={clickItem.id} className="modal-bookmark-off bookmark-on" onClick={handleBookmarkClick}/>}
                 <span>{clickItem.title || clickItem.brand_name}</span>
             </div>
         </div>

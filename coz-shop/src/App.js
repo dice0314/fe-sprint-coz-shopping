@@ -22,16 +22,19 @@ function App() {
   const [bookmarkList, setBookmarkList] = useState([]);
 
   const handleBookmarkClick = (event) => {
-    const itemId = Number(event.target.parentNode.id);
+    const itemId = Number(event.target.id);
     const isBookmark = bookmarkList.findIndex((bookmark) => bookmark.id === itemId);
     const bookmarkStar = event.target;
+    
+    console.log(event.target)
+    console.log(bookmarkList)
+    console.log(itemId)
 
     if (isBookmark !== -1) {
       const updatedList = [...bookmarkList];
       updatedList.splice(isBookmark, 1);
       bookmarkStar.classList.remove('bookmark-on');
       setBookmarkList(updatedList);
-
     } else {
       const addBookmark = {
         id: itemId,
@@ -50,15 +53,18 @@ function App() {
       const result = data.find((item) => item.id === Number(event.target.id))
       setClickItem(result)
     }
-    console.log(clickItem)
-
   }
 
 
   return (
     <Router>
       <div className="App">
-        {isModalOpen ? <ItemModal handleModalOpen={handleModalOpen} clickItem={clickItem} /> : null}
+        {isModalOpen ?
+          <ItemModal
+            handleModalOpen={handleModalOpen}
+            clickItem={clickItem}
+            handleBookmarkClick={handleBookmarkClick}
+            bookmarkList={bookmarkList} /> : null}
         <Routes>
           <Route path="/" element={
             <Main
@@ -66,17 +72,21 @@ function App() {
               bookmarkList={bookmarkList}
               handleBookmarkClick={handleBookmarkClick}
               handleModalOpen={handleModalOpen}
-              setClickItem={setClickItem}/>} />
+              setClickItem={setClickItem} />} />
           <Route path="/products/list" element={
             <Products
               data={data}
               handleBookmarkClick={handleBookmarkClick}
-              bookmarkList={bookmarkList}/>} />
+              bookmarkList={bookmarkList}
+              handleModalOpen={handleModalOpen}
+              setClickItem={setClickItem} />} />
           <Route path="/bookmark" element={
             <Bookmark
               data={data}
               handleBookmarkClick={handleBookmarkClick}
-              bookmarkList={bookmarkList}/>} />
+              bookmarkList={bookmarkList}
+              handleModalOpen={handleModalOpen}
+              setClickItem={setClickItem} />} />
         </Routes>
       </div>
     </Router>

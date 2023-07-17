@@ -39,7 +39,9 @@ export default function Main({ data, bookmarkList, handleBookmarkClick, handleMo
                                         id={item.id}
                                         item={item}
                                         bookmarkList={bookmarkList}
-                                        handleBookmarkClick={handleBookmarkClick}/>
+                                        handleBookmarkClick={handleBookmarkClick}
+                                        handleModalOpen={handleModalOpen}
+                                        setClickItem={setClickItem} />
                                 );
                             }
                             return null;

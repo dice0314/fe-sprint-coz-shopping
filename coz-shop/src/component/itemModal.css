@@ -16,6 +16,7 @@
 }
 
 .modal-close-img-container {
+    cursor: pointer;
     position: absolute;
     display: flex;
     width: 744px;
@@ -37,10 +38,16 @@
 .modal-bookmark-off {
     width: 30px;
     height: 30px;
+    border-style: none;
+    background: url("../../public/image_component/star_off.png") no-repeat;
+}
+
+.bookmark-on {
+    background: url("../../public/image_component/star_on.png") no-repeat;
 }
 
 .modal-container span {
     font-size: 24px;
     color: #fff;
-    text-shadow: 0 0 4px rgb(0, 0, 0, 0.1);
+    text-shadow: 0 0 4px rgb(0, 0, 0, 0.2);
 }
