@@ -6,15 +6,12 @@ export default function Header() {
     const [burger, setBurger] = useState(false);
 
     const handleHamburgerClick = () => {
-        const burgerList = document.querySelector('.hamburger-list');
-        const burgerListhead = document.querySelector('.hamburger-list-head');
+        const burgerList = document.querySelector('.hamburger-list-container');
 
         if(burger){
             burgerList.classList.add('hamburger-none');
-            burgerListhead.classList.add('hamburger-none');
         } else {
             burgerList.classList.remove('hamburger-none');
-            burgerListhead.classList.remove('hamburger-none');
         }
         setBurger(!burger);
     }
@@ -29,12 +26,14 @@ export default function Header() {
                 <img src="/image_component/hamburger.png" alt="hamburger"
                     onClick={()=>handleHamburgerClick()}
                 />
-                <div className="hamburger-list-head hamburger-none"></div>
-                <div className="hamburger-list hamburger-none">
-                    <div className="customer-name">권순범님, 안녕하세요!</div>
-                    <Link to="/products/list"><div className="page-button">🎁상품리스트 페이지</div></Link>
-                    <Link to="/bookmark"><div className="page-button">⭐북마크 페이지</div></Link>
-                </div>
+                <nav className="hamburger-list-container hamburger-none">
+                    <div className="hamburger-list-head"></div>
+                    <div className="hamburger-list">
+                        <div className="customer-name">권순범님, 안녕하세요!</div>
+                        <Link to="/products/list"><div className="page-button">🎁상품리스트 페이지</div></Link>
+                        <Link to="/bookmark"><div className="page-button">⭐북마크 페이지</div></Link>
+                    </div>
+                </nav>
             </div>
         </header>
     )
