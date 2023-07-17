@@ -14,7 +14,7 @@
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
-  "homepage": "https://dice0314@naver.com.github.io/fe-sprint-coz-shopping",
+  "homepage": "https://dice0314.github.io/fe-sprint-coz-shopping",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
