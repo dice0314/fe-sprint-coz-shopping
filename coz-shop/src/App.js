@@ -25,10 +25,6 @@ function App() {
     const itemId = Number(event.target.id);
     const isBookmark = bookmarkList.findIndex((bookmark) => bookmark.id === itemId);
     const bookmarkStar = event.target;
-    
-    console.log(event.target)
-    console.log(bookmarkList)
-    console.log(itemId)
 
     if (isBookmark !== -1) {
       const updatedList = [...bookmarkList];

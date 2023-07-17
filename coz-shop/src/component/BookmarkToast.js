@@ -11,7 +11,7 @@ export default function BookmarkToast() {
     </div>
     <div className='toast-container2'>
         <img src="/image_component/star_off.png" alt="" />
-        <span> 상품이 북마크에 추가되었습니다.</span>
+        <span>상품이 북마크에서 제거되었습니다.</span>
     </div>
     </>
   )

@@ -3,12 +3,14 @@ li:not(:nth-child(4n)) {
 }
 
 .item-img {
+    cursor: pointer;
     height: 210px;
     width: 264px;
     border-radius: 12px;
 }
 
 .item-bookmark {
+    cursor: pointer;
     position: absolute;
     display: flex;
     justify-content: center;
