@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import './bookmarkToast.css'
 
-export default function BookmarkToast({ showToast, setShowToast, bookmarkList }) {
+export default function BookmarkToast({ showToast, setShowToast, actionType }) {
 
   useEffect(() => {
     if (showToast) {
@@ -13,18 +13,17 @@ export default function BookmarkToast({ showToast, setShowToast, bookmarkList })
 
   return (
     <>
-      {showToast && (
+      {actionType === 'add' && showToast ? (
         <div className='toast-container'>
           <img src='/image_component/star_on.png' alt='' />
           <span>상품이 북마크에 추가되었습니다.</span>
         </div>
-      )}
-      {/* {showToast && (
+      ) : actionType === 'remove' && showToast && (
         <div className='toast-container'>
           <img src='/image_component/star_off.png' alt='' />
           <span>상품이 북마크에서 제거되었습니다.</span>
         </div>
-      )} */}
+      )}
     </>
   );
 }

@@ -21,6 +21,8 @@ function App() {
   }, []);
 
   const [bookmarkList, setBookmarkList] = useState([]);
+  const [showToast, setShowToast] = useState(false);
+  const [actionType, setActionType] = useState('');
 
   const handleBookmarkClick = (event) => {
     const itemId = Number(event.target.id);
@@ -32,6 +34,7 @@ function App() {
       updatedList.splice(isBookmark, 1);
       bookmarkStar.classList.remove('bookmark-on');
       setBookmarkList(updatedList);
+      setActionType('remove');
       setShowToast(true);
     } else {
       const addBookmark = {
@@ -39,8 +42,10 @@ function App() {
       };
       setBookmarkList([...bookmarkList, addBookmark]);
       bookmarkStar.classList.add('bookmark-on');
+      setActionType('add');
       setShowToast(true);
     }
+    console.log(actionType)
   };
 
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -53,9 +58,7 @@ function App() {
       setClickItem(result)
     }
   }
-
-  const [showToast, setShowToast] = useState(false);
-
+  
   return (
     <Router>
       <div className="App">
@@ -68,7 +71,8 @@ function App() {
           <BookmarkToast
             showToast={showToast}
             setShowToast={setShowToast}
-            bookmarkList={bookmarkList} />
+            bookmarkList={bookmarkList}
+            actionType={actionType} />
         <Routes>
           <Route path="/" element={
             <Main
