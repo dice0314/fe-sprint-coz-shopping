@@ -1,35 +1,15 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Footer from "../component/Footer";
 import Header from "../component/Header";
 import ItemFilter from "../component/ItemFilter";
 import Item from "../component/Item";
 
 export default function Bookmark({ data , handleBookmarkClick, bookmarkList, handleModalOpen, setClickItem }) {
-
     const [filterType, setfilterType] = useState("All");
+    const itemFilterRef = useRef(null);
 
-    const handleFilterClick = (event) => {
-      const filterName = event.currentTarget.querySelector('.filter-name');
-      const selectedFilter = filterName.textContent;
-
-      if(selectedFilter === "전체"){
-          setfilterType("All");
-      } else if(selectedFilter === "상품"){
-          setfilterType("Product");
-      } else if(selectedFilter === "카테고리"){
-          setfilterType("Category");
-      } else if(selectedFilter === "기획전"){
-          setfilterType("Exhibition");
-      } else if(selectedFilter === "브랜드"){
-          setfilterType("Brand");
-      }
-        
-      const filterNames = document.querySelectorAll('.filter-name');
-
-      filterNames.forEach((name) => {
-        name.classList.remove('itemFilter-select');
-      });
-      filterName.classList.add('itemFilter-select');
+    const handleFilterClick = (type) => {
+        setfilterType(type);
     };
 
     const filterBookmark = data.filter((item) => {
@@ -46,7 +26,11 @@ export default function Bookmark({ data , handleBookmarkClick, bookmarkList, han
         <section>
             <Header />
             <div className="product-container">
-                <ItemFilter data={data} handleFilterClick={handleFilterClick} />
+            <ItemFilter
+                    data={data}
+                    handleFilterClick={handleFilterClick}
+                    itemFilterRef={itemFilterRef}
+                    filterType={filterType}/>
                 <ul className="item-list">
                     {filterBookmark.length > 0 ? (
                         filterBookmark.map((item) => (
