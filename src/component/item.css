@@ -31,22 +31,23 @@ li:not(:nth-child(4n)) {
     display: flex;
     justify-content: space-between;
     height: 54px;
+    width: 264px;
+    word-wrap: break-word;
+}
+
+.item-info-wrapper1 {
+    display: flex;
+    flex-direction: column;
 }
 
 .item-title {
     font-size: 16px;
     font-weight: 800;
-    width: 155px;
 }
 
-.item-info-container2 {
+.item-info-wrapper2 {
     display: flex;
     flex-direction: column;
-}
-
-.item-info-container2 p {
-    font-size: 16px;
-    font-weight: 700;
 }
 
 .item-discountPer {
@@ -57,17 +58,13 @@ li:not(:nth-child(4n)) {
     color: #452CDD;
 }
 
+.item-info-wrapper2 > p {
+    font-weight: 700;
+}
+
 .item-info {
     display: flex;
     justify-content: right;
     font-size: 16px;
-}
-
-.item-ex-info-container {
-    height: 54px;
-}
-
-.item-ex-info {
-    display: flex;
-    justify-content: left;
+    white-space: nowrap;
 }

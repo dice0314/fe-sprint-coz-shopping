@@ -15,7 +15,9 @@ export default function ItemFilter({ handleFilterClick, itemFilterRef, filterTyp
       {filterOptions.map((option) => (
         <div key={option.type} className="filter-option" onClick={() => handleFilterClick(option.type)}>
           <img src={option.img} alt={option.name} />
-          <span ref={itemFilterRef} className={filterType === option.type ? "filter-name itemFilter-select" : "filter-name"}>{option.name}</span>
+          <span
+            ref={itemFilterRef}
+            className={`filter-name ${filterType === option.type ? "itemFilter-select" : ""}`}>{option.name}</span>
         </div>
       ))}
     </div>
