@@ -1,0 +1,19 @@
+.product-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.product-container > div{
+    margin-top: 24px;
+}
+
+.item-list {
+    display: flex;
+    flex-wrap: wrap;
+    width: 1128px;
+}
+
+.item-list li {
+    margin-top: 12px;
+}

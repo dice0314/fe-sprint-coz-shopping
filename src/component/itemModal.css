@@ -1,0 +1,55 @@
+.modal-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.2);
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+
+.modal-item-img {
+    width: 744px;
+    height: 480px;
+    border-radius: 12px;
+}
+
+.modal-close-img-container {
+    cursor: pointer;
+    position: absolute;
+    display: flex;
+    width: 744px;
+    justify-content: end;
+    margin-right: 50px;
+    margin-bottom: 410px;
+}
+
+.modal-info-container{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    height: 30px;
+    width: 744px;
+    margin-left: 50px;
+    margin-top: 410px;
+}
+
+.modal-bookmark-off {
+    width: 30px;
+    height: 30px;
+    border-style: none;
+    background: url("../../public/image_component/star_off.png") no-repeat;
+    cursor: pointer;
+}
+
+.bookmark-on {
+    background: url("../../public/image_component/star_on.png") no-repeat;
+}
+
+.modal-container span {
+    margin-left: 5px;
+    font-size: 24px;
+    color: #fff;
+    text-shadow: 0 0 4px rgb(0, 0, 0, 0.2);
+}

@@ -1,0 +1,23 @@
+.toast-container {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    bottom: 40px;
+    right: 20px;
+    padding: 18px 24px;
+    border-style: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+    background-color: #fff;
+    z-index: 100;
+}
+
+.toast-container > img {
+    height: 24px;
+    width: 24px;
+}
+
+.toast-container > span {
+    font-size: 16px;
+    font-weight: 700;
+}

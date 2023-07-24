@@ -1,0 +1,30 @@
+.itemFilter-container {
+    display: flex;
+    justify-content: space-between;
+    width: 554px;
+    height: 122px;
+}
+
+.itemFilter-container div {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 82px;
+    height: 110px;
+}
+
+.itemFilter-container div img{
+    width: 82px;
+    height: 82px;
+}
+
+.itemFilter-container div span{
+    font-size: 16px;
+}
+
+.itemFilter-select {
+    color: #412DD4;
+    border-bottom: 3px solid #412DD4;
+}

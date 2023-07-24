@@ -1,0 +1,35 @@
+.item-list-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 12px;
+}
+
+.item-list {
+    margin-top: 12px;
+    width: 1128px;
+}
+
+.item-list h2 {
+    margin-bottom: 12px;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.item-list ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 1128px;
+    height: 264px;
+}
+
+.bookmark-none {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 264px;
+    width: 1128px;
+    font-size: 26px;
+    
+}

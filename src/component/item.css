@@ -1,15 +1,16 @@
-.item {
-    height: 264px;
-    width: 264px;
+li:not(:nth-child(4n)) {
+    margin-right: 24px;
 }
 
 .item-img {
+    cursor: pointer;
     height: 210px;
     width: 264px;
     border-radius: 12px;
 }
 
 .item-bookmark {
+    cursor: pointer;
     position: absolute;
     display: flex;
     justify-content: center;
@@ -22,9 +23,21 @@
     background: url("../../public/image_component/star_off.png") no-repeat;
 }
 
+.bookmark-on {
+    background: url("../../public/image_component/star_on.png") no-repeat;
+}
+
 .item-info-container {
     display: flex;
     justify-content: space-between;
+    height: 54px;
+    width: 264px;
+    word-wrap: break-word;
+}
+
+.item-info-wrapper1 {
+    display: flex;
+    flex-direction: column;
 }
 
 .item-title {
@@ -32,14 +45,9 @@
     font-weight: 800;
 }
 
-.item-info-container2 {
+.item-info-wrapper2 {
     display: flex;
     flex-direction: column;
-}
-
-.item-info-container2 p {
-    font-size: 16px;
-    font-weight: 700;
 }
 
 .item-discountPer {
@@ -50,8 +58,13 @@
     color: #452CDD;
 }
 
+.item-info-wrapper2 > p {
+    font-weight: 700;
+}
+
 .item-info {
     display: flex;
     justify-content: right;
     font-size: 16px;
+    white-space: nowrap;
 }
