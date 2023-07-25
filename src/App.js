@@ -45,6 +45,7 @@ function App() {
       setActionType('add');
       setShowToast(true);
     }
+    console.log(actionType)
   };
 
   const [isModalOpen, setIsModalOpen] = useState(false);
